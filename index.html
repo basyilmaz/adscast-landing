@@ -5,7 +5,47 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AdsCast Bilingual SaaS Landing Page</title>
-    
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6HEEZHSE7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-Q6HEEZHSE7', {
+    page_title: 'AdsCast Landing Page',
+    page_location: window.location.href
+  });
+
+  // Email signup tracking
+  function trackEmailSignup(language) {
+    gtag('event', 'generate_lead', {
+      'event_category': 'engagement',
+      'event_label': 'waitlist_' + language,
+      'value': 1,
+      'currency': 'USD'
+    });
+    console.log('📊 Email signup tracked:', language);
+  }
+
+  // Language switch tracking
+  function trackLanguageSwitch(section) {
+    gtag('event', 'select_content', {
+      'event_category': 'navigation',
+      'content_type': 'language_section',
+      'item_id': section
+    });
+    console.log('📊 Language switch tracked:', section);
+  }
+
+  // Page section tracking
+  function trackSectionView(section) {
+    gtag('event', 'scroll', {
+      'event_category': 'engagement',
+      'event_label': section + '_section_viewed'
+    });
+  }
+</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6HEEZHSE7"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
