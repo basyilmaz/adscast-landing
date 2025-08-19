@@ -2,60 +2,794 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AdsCast Bilingual SaaS Landing Page</title>
+    <title>AdsCast - AI-Powered SEO & Google Ads Platform</title>
+    <meta name="description" content="Transform any website into an SEO & Ads powerhouse with AI-driven insights and automation. Works with WordPress, Shopify, and any website.">
+    
     <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6HEEZHSE7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  
-  gtag('config', 'G-Q6HEEZHSE7', {
-    page_title: 'AdsCast Landing Page',
-    page_location: window.location.href
-  });
-
-  // Email signup tracking
-  function trackEmailSignup(language) {
-    gtag('event', 'generate_lead', {
-      'event_category': 'engagement',
-      'event_label': 'waitlist_' + language,
-      'value': 1,
-      'currency': 'USD'
-    });
-    console.log('📊 Email signup tracked:', language);
-  }
-
-  // Language switch tracking
-  function trackLanguageSwitch(section) {
-    gtag('event', 'select_content', {
-      'event_category': 'navigation',
-      'content_type': 'language_section',
-      'item_id': section
-    });
-    console.log('📊 Language switch tracked:', section);
-  }
-
-  // Page section tracking
-  function trackSectionView(section) {
-    gtag('event', 'scroll', {
-      'event_category': 'engagement',
-      'event_label': section + '_section_viewed'
-    });
-  }
-</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6HEEZHSE7"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Q6HEEZHSE7');
-    console.log('Analytics loaded');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-Q6HEEZHSE7', {
+        page_title: 'AdsCast Landing Page',
+        page_location: window.location.href
+      });
+      
+      // Email signup tracking
+      function trackEmailSignup(language) {
+        gtag('event', 'generate_lead', {
+          'event_category': 'engagement',
+          'event_label': 'waitlist_' + language,
+          'value': 1,
+          'currency': 'USD'
+        });
+        console.log('📊 Email signup tracked:', language);
+      }
+      
+      // Language switch tracking
+      function trackLanguageSwitch(section) {
+        gtag('event', 'select_content', {
+          'event_category': 'navigation',
+          'content_type': 'language_section',
+          'item_id': section
+        });
+        console.log('📊 Language switch tracked:', section);
+      }
+      
+      // Page section tracking
+      function trackSectionView(section) {
+        gtag('event', 'scroll', {
+          'event_category': 'engagement',
+          'event_label': section + '_section_viewed'
+        });
+      }
+      
+      console.log('Analytics loaded');
     </script>
+    
+    <!-- Styles -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f8fafc;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="2" fill="white" opacity="0.1"/></svg>');
+        animation: float 20s infinite linear;
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .logo {
+        font-size: 60px;
+        margin-bottom: 20px;
+        animation: bounce 2s infinite;
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+      }
+      
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #fff, #e0e7ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .hero .subtitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+      
+      .hero h2 {
+        font-size: 42px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+      
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 50px;
+        opacity: 0.85;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .email-form {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 500px;
+        margin: 0 auto 60px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+      
+      .email-form h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+      
+      .email-form .form-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+        opacity: 0.8;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      .form-input {
+        width: 100%;
+        padding: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: white;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+      
+      .form-input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      
+      .form-input:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.2);
+      }
+      
+      .btn-primary {
+        width: 100%;
+        padding: 18px;
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        color: #1a1a1a;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+      }
+      
+      .language-switch {
+        margin: 40px 0;
+      }
+      
+      .language-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+      
+      .language-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      .section {
+        padding: 80px 0;
+      }
+      
+      .section-dark {
+        background: #1a1a1a;
+        color: white;
+      }
+      
+      .section h2 {
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      
+      .section p {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 60px;
+        opacity: 0.8;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin: 60px 0;
+      }
+      
+      .feature-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .section-dark .feature-card {
+        background: #2a2a2a;
+        color: white;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      
+      .feature-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        display: block;
+      }
+      
+      .feature-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+      
+      .feature-card p {
+        font-size: 16px;
+        opacity: 0.7;
+        margin: 0;
+      }
+      
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+      }
+      
+      .pricing-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .pricing-card.featured {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+      
+      .pricing-card.featured::before {
+        content: 'MOST POPULAR';
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ffd700;
+        color: #1a1a1a;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      
+      .pricing-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      
+      .pricing-card .price {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      
+      .pricing-card .price-period {
+        font-size: 16px;
+        opacity: 0.7;
+        margin-bottom: 30px;
+      }
+      
+      .pricing-card ul {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+      
+      .pricing-card li {
+        padding: 8px 0;
+        font-size: 16px;
+      }
+      
+      .pricing-card li:before {
+        content: '✅';
+        margin-right: 10px;
+      }
+      
+      .footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 60px 0 40px;
+        text-align: center;
+      }
+      
+      .footer h3 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      
+      .footer p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        opacity: 0.8;
+      }
+      
+      .social-links {
+        margin-bottom: 40px;
+      }
+      
+      .social-links a {
+        color: white;
+        font-size: 24px;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        transform: translateY(-3px);
+      }
+      
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 30px;
+        font-size: 14px;
+        opacity: 0.6;
+      }
+      
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 36px; }
+        .hero h2 { font-size: 28px; }
+        .hero p { font-size: 18px; }
+        .section h2 { font-size: 32px; }
+        .features-grid { grid-template-columns: 1fr; }
+        .pricing-grid { grid-template-columns: 1fr; }
+        .pricing-card.featured { transform: none; }
+        .email-form { padding: 30px 20px; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- English Section -->
+      <section class="hero" id="english">
+        <div class="container">
+          <div class="hero-content">
+            <div class="logo">📊</div>
+            <h1>AdsCast</h1>
+            <p class="subtitle">AI-Powered SEO & Google Ads Platform</p>
+            <h2>Transform Any Website Into an SEO & Ads Powerhouse</h2>
+            <p>AI-driven optimization platform that works with WordPress, Shopify, or any website. Get actionable insights and automated improvements.</p>
+            
+            <div class="email-form">
+              <h3>🚀 Join Early Access List</h3>
+              <p class="form-subtitle">Be among the first 100 users to get free Pro access!</p>
+              <form onsubmit="handleEmailSignup(event, 'english')">
+                <div class="form-group">
+                  <input type="email" class="form-input" placeholder="Your email address" required>
+                </div>
+                <div class="form-group">
+                  <input type="url" class="form-input" placeholder="Your website URL (optional)">
+                </div>
+                <button type="submit" class="btn-primary">Join Waitlist</button>
+              </form>
+            </div>
+            
+            <div class="language-switch">
+              <a href="#turkish" class="language-btn" onclick="trackLanguageSwitch('en_to_tr')">🇹🇷 Türkçe için tıklayın</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="section">
+        <div class="container">
+          <h2>What Makes AdsCast Special?</h2>
+          <p>AI-powered SEO and Google Ads management platform for any website</p>
+          
+          <div class="features-grid">
+            <div class="feature-card">
+              <span class="feature-icon">🌐</span>
+              <h3>Universal Website Support</h3>
+              <p>Works with WordPress, Shopify, WooCommerce, or any custom website. Easy integration for any platform.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">🤖</span>
+              <h3>AI-Powered Analysis</h3>
+              <p>Smart SEO recommendations and Google Ads optimization powered by advanced AI algorithms.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">⚡</span>
+              <h3>Automation Engine</h3>
+              <p>Set rules and let AI handle bid management, keyword optimization, and performance monitoring.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">📊</span>
+              <h3>Unified Dashboard</h3>
+              <p>See all your SEO and Google Ads metrics in one place. Cross-channel insights and correlations.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">🔌</span>
+              <h3>Smart Integrations</h3>
+              <p>WordPress Site Kit auto-connect, Shopify apps, and custom API integrations for any platform.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">🌍</span>
+              <h3>Global + Local</h3>
+              <p>International reach with local market expertise. Turkish market specialists and global coverage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section class="section section-dark">
+        <div class="container">
+          <h2>Simple, Transparent Pricing</h2>
+          <p>Choose the plan that fits your needs. All plans include AI-powered insights and automation.</p>
+          
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <h3>Starter</h3>
+              <div class="price">Free</div>
+              <div class="price-period">Forever</div>
+              <ul>
+                <li>3 pages analysis per month</li>
+                <li>Basic SEO reports</li>
+                <li>WordPress Site Kit integration</li>
+                <li>Email support</li>
+              </ul>
+            </div>
+            
+            <div class="pricing-card featured">
+              <h3>Pro</h3>
+              <div class="price">$29</div>
+              <div class="price-period">per month</div>
+              <ul>
+                <li>50 pages analysis per month</li>
+                <li>Google Ads dashboard</li>
+                <li>AI optimization recommendations</li>
+                <li>Competitor analysis basics</li>
+                <li>Priority support</li>
+              </ul>
+            </div>
+            
+            <div class="pricing-card">
+              <h3>Agency</h3>
+              <div class="price">$59</div>
+              <div class="price-period">per month</div>
+              <ul>
+                <li>200 pages analysis per month</li>
+                <li>Multi-site management</li>
+                <li>Advanced automation</li>
+                <li>White-label reports</li>
+                <li>Team collaboration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Turkish Section -->
+      <section class="hero" id="turkish">
+        <div class="container">
+          <div class="hero-content">
+            <div class="logo">📊</div>
+            <h1>AdsCast</h1>
+            <p class="subtitle">Yapay Zeka Destekli SEO ve Google Ads Platformu</p>
+            <h2>Herhangi Bir Web Sitesini SEO ve Reklam Makinesine Dönüştürün</h2>
+            <p>WordPress, Shopify veya herhangi bir web sitesi için yapay zeka destekli optimizasyon platformu. Eyleme dönüştürülebilir içgörüler ve otomatik iyileştirmeler alın.</p>
+            
+            <div class="email-form">
+              <h3>🚀 Erken Erişim Listesine Katıl</h3>
+              <p class="form-subtitle">İlk 100 kullanıcı arasında olun ve ücretsiz Pro erişim kazanın!</p>
+              <form onsubmit="handleEmailSignup(event, 'turkish')">
+                <div class="form-group">
+                  <input type="email" class="form-input" placeholder="E-posta adresiniz" required>
+                </div>
+                <div class="form-group">
+                  <input type="url" class="form-input" placeholder="Web site URL'niz (opsiyonel)">
+                </div>
+                <button type="submit" class="btn-primary">Listeye Katıl</button>
+              </form>
+            </div>
+            
+            <div class="language-switch">
+              <a href="#english" class="language-btn" onclick="trackLanguageSwitch('tr_to_en')">🇺🇸 View in English</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Turkish Features -->
+      <section class="section">
+        <div class="container">
+          <h2>AdsCast'i Özel Yapan Nedir?</h2>
+          <p>Her platform için yapay zeka destekli SEO ve Google Ads optimizasyonu</p>
+          
+          <div class="features-grid">
+            <div class="feature-card">
+              <span class="feature-icon">🌐</span>
+              <h3>Evrensel Web Sitesi Desteği</h3>
+              <p>WordPress, Shopify, WooCommerce veya herhangi bir özel web sitesi ile çalışır. Her platform için kolay entegrasyon.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">🤖</span>
+              <h3>Yapay Zeka Destekli Analiz</h3>
+              <p>Gelişmiş AI algoritmaları tarafından desteklenen akıllı SEO önerileri ve Google Ads optimizasyonu.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">⚡</span>
+              <h3>Otomasyon Motoru</h3>
+              <p>Kurallar belirleyin ve AI'nin teklif yönetimi, anahtar kelime optimizasyonu ve performans izleme işlemlerini halletmesine izin verin.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">📊</span>
+              <h3>Birleşik Dashboard</h3>
+              <p>Tüm SEO ve Google Ads metriklerinizi tek yerde görün. Çapraz kanal içgörüleri ve korelasyonları.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">🔌</span>
+              <h3>Akıllı Entegrasyonlar</h3>
+              <p>WordPress Site Kit otomatik bağlantı, Shopify uygulamaları ve her platform için özel API entegrasyonları.</p>
+            </div>
+            
+            <div class="feature-card">
+              <span class="feature-icon">🌍</span>
+              <h3>Global + Yerel</h3>
+              <p>Yerel pazar uzmanlığı ile uluslararası erişim. Türk pazarı uzmanları ve küresel kapsam.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Turkish Pricing -->
+      <section class="section section-dark">
+        <div class="container">
+          <h2>Basit, Şeffaf Fiyatlandırma</h2>
+          <p>İhtiyaçlarınıza uygun planı seçin. Tüm planlar AI destekli içgörüler ve otomasyon içerir.</p>
+          
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <h3>Başlangıç</h3>
+              <div class="price">Ücretsiz</div>
+              <div class="price-period">Sonsuza kadar</div>
+              <ul>
+                <li>Ayda 3 sayfa analizi</li>
+                <li>Temel SEO raporları</li>
+                <li>WordPress Site Kit entegrasyonu</li>
+                <li>E-posta desteği</li>
+              </ul>
+            </div>
+            
+            <div class="pricing-card featured">
+              <h3>Pro</h3>
+              <div class="price">₺699</div>
+              <div class="price-period">aylık</div>
+              <ul>
+                <li>Ayda 50 sayfa analizi</li>
+                <li>Google Ads dashboard</li>
+                <li>AI optimizasyon önerileri</li>
+                <li>Temel rakip analizi</li>
+                <li>Öncelikli destek</li>
+              </ul>
+            </div>
+            
+            <div class="pricing-card">
+              <h3>Ajans</h3>
+              <div class="price">₺1,499</div>
+              <div class="price-period">aylık</div>
+              <ul>
+                <li>Ayda 200 sayfa analizi</li>
+                <li>Çoklu site yönetimi</li>
+                <li>Gelişmiş otomasyon</li>
+                <li>Beyaz etiket raporları</li>
+                <li>Ekip işbirliği</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <h3>AdsCast</h3>
+          <p>Transform any website into an SEO & Ads powerhouse with AI-driven insights and automation.</p>
+          
+          <div class="social-links">
+            <a href="#" onclick="gtag('event', 'social_click', {'event_label': 'twitter'})">🐦</a>
+            <a href="#" onclick="gtag('event', 'social_click', {'event_label': 'linkedin'})">💼</a>
+            <a href="#" onclick="gtag('event', 'social_click', {'event_label': 'email'})">📧</a>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2025 AdsCast by Castamon. All rights reserved.</p>
+            <p>🚀 Coming Soon - Currently in Development</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Email form handling
+      function handleEmailSignup(event, language) {
+        event.preventDefault();
+        
+        const form = event.target;
+        const email = form.querySelector('input[type="email"]').value;
+        const website = form.querySelector('input[type="url"]').value;
+        
+        // Track analytics
+        trackEmailSignup(language);
+        
+        // Store data (replace with actual backend later)
+        const signupData = {
+          email: email,
+          website: website,
+          language: language,
+          timestamp: new Date().toISOString(),
+          source: 'landing_page'
+        };
+        
+        // Store in localStorage for now
+        const existingData = JSON.parse(localStorage.getItem('adscast_signups') || '[]');
+        existingData.push(signupData);
+        localStorage.setItem('adscast_signups', JSON.stringify(existingData));
+        
+        // Show success message
+        const message = language === 'turkish' 
+          ? 'Teşekkürler! Yakında sizinle iletişime geçeceğiz.' 
+          : 'Thank you! We\'ll contact you soon.';
+        
+        alert(message);
+        
+        // Reset form
+        form.reset();
+        
+        console.log('📧 Email signup:', signupData);
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Track section views on scroll
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            if (sectionId) {
+              trackSectionView(sectionId);
+            }
+          }
+        });
+      }, observerOptions);
+      
+      // Observe sections
+      document.querySelectorAll('section[id]').forEach(section => {
+        observer.observe(section);
+      });
+      
+      // Performance tracking
+      window.addEventListener('load', function() {
+        gtag('event', 'timing_complete', {
+          'name': 'load',
+          'value': Math.round(performance.now())
+        });
+      });
+      
+      // Console welcome message
+      console.log('🚀 AdsCast - AI-Powered SEO & Google Ads Platform');
+      console.log('📊 Analytics tracking active');
+      console.log('✅ Landing page loaded successfully');
+    </script>
   </body>
 </html>
